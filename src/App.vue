@@ -52,19 +52,19 @@
     </v-app-bar>
 
     <v-content>
-      <Summary/>
+      <Admin/>
     </v-content>
   </v-app>
 </template>
 
 <script>
-import Summary from './components/Summary';
+import Admin from './components/Admin';
 
 export default {
   name: 'App',
 
   components: {
-    Summary
+    Admin
   },
 
   data: () => ({

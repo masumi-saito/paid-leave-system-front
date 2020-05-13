@@ -2,7 +2,7 @@
   <v-app>
     <v-app-bar
       app
-      color="primary"
+      color="#212121"
       dark
     >
       <div class="d-flex align-center">
@@ -14,15 +14,29 @@
           transition="scale-transition"
           width="40"
         />
+      </div>
+      <div class="user-name">
+        USER NAME
+      </div>
+      <v-spacer></v-spacer>
+      <div class="menu">
+        <v-btn>
+          <router-link to="/summary">
+            <span class="mr-2">サマリー</span>
+          </router-link>
+        </v-btn>
 
-        <v-img
-          alt="Vuetify Name"
-          class="shrink mt-1 hidden-sm-and-down"
-          contain
-          min-width="100"
-          src="https://cdn.vuetifyjs.com/images/logos/vuetify-name-dark.png"
-          width="100"
-        />
+        <v-btn>
+          <span class="mr-2">休暇申請</span>
+        </v-btn>
+
+        <v-btn>
+          <span class="mr-2">休暇承認</span>
+        </v-btn>
+
+        <v-btn>
+          <span class="mr-2">管理者用</span>
+        </v-btn>
       </div>
 
       <v-spacer></v-spacer>
@@ -38,19 +52,19 @@
     </v-app-bar>
 
     <v-content>
-      <HelloWorld/>
+      <Summary/>
     </v-content>
   </v-app>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld';
+import Summary from './components/Summary';
 
 export default {
   name: 'App',
 
   components: {
-    HelloWorld,
+    Summary
   },
 
   data: () => ({
@@ -58,3 +72,9 @@ export default {
   }),
 };
 </script>
+
+<style lang="scss">
+  v-app {
+    background: #767676;
+  }
+</style>

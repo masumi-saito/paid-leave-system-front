@@ -1,5 +1,6 @@
 <template>
-  <v-container>
+  <v-app>
+    <v-container>
       <v-form class="apply-form">
         <v-row>
           <h3>取得予定日(期間)</h3>
@@ -10,7 +11,7 @@
           label="休暇開始日"
           required
           ></v-text-field>
-          <span>~</span>
+          <span>〜</span>
           <v-text-field
           v-model="date"
           :rules="emailRules"
@@ -38,7 +39,8 @@
         </v-row>
       </v-form>
       <v-btn class="btn" @click="login()">申請する</v-btn>
-  </v-container>
+    </v-container>
+  </v-app>
 </template>
 
 <script>

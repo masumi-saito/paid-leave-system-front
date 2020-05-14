@@ -12,7 +12,7 @@
         >
           <template slot="items" slot-scope="props">
             <td>{{ props.item.name }}</td>
-            <td class="text-xs-right">{{ props.item.calories }}</td>
+            <td class="text-xs-right">{{ props.item.type }}</td>
           </template>
         </v-data-table>
       </v-col>
@@ -62,8 +62,8 @@
         historyItems: [
           {
             value: false,
-            date: 'Frozen Yogurt',
-            type: 159
+            date: '2019/05/01',
+            type: '有給休暇'
           },
           {
             value: false,

@@ -1,48 +1,46 @@
 <template>
-  <div id="app">
-    <v-container>
-      <v-row>
-        <v-col>
-          <h2>取得履歴</h2>
-          <v-data-table
-            :headers="historyHeaders"
-            :items="historyItems"
-            :items-per-page="5"
-            no-data-text="履歴データがありません。"
-            class="elevation-1 tableheader"
-          >
-            <template slot="items" slot-scope="props">
-              <td>{{ props.item.name }}</td>
-              <td class="text-xs-right">{{ props.item.calories }}</td>
-            </template>
-          </v-data-table>
-        </v-col>
-      </v-row>
-      <v-row>
-        <v-col>
-          <h2>休暇残日数</h2>
-          <v-simple-table>
-            <thead>
-              <tr>
-                <th class="text-center">有給休暇</th>
-                <th class="text-center">代休</th>
-                <th class="text-center">夏季休日</th>
-                <th class="text-center">特別休暇</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr v-for="item in remainingItems" :key="item.name">
-                <td class="text-center">{{ item.paidHoliday }}</td>
-                <td class="text-center">{{ item.substituteVacation }}</td>
-                <td class="text-center">{{ item.summerVacation }}</td>
-                <td class="text-center">{{ item.specialHoliday }}</td>
-              </tr>
-            </tbody>
-          </v-simple-table>
-        </v-col>
-      </v-row>
-    </v-container>
-  </div>
+  <v-container>
+    <v-row>
+      <v-col>
+        <h2>取得履歴</h2>
+        <v-data-table
+          :headers="historyHeaders"
+          :items="historyItems"
+          :items-per-page="5"
+          no-data-text="履歴データがありません。"
+          class="elevation-1 tableheader"
+        >
+          <template slot="items" slot-scope="props">
+            <td>{{ props.item.name }}</td>
+            <td class="text-xs-right">{{ props.item.calories }}</td>
+          </template>
+        </v-data-table>
+      </v-col>
+    </v-row>
+    <v-row>
+      <v-col>
+        <h2>休暇残日数</h2>
+        <v-simple-table>
+          <thead>
+            <tr>
+              <th class="text-center">有給休暇</th>
+              <th class="text-center">代休</th>
+              <th class="text-center">夏季休日</th>
+              <th class="text-center">特別休暇</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr v-for="item in remainingItems" :key="item.name">
+              <td class="text-center">{{ item.paidHoliday }}</td>
+              <td class="text-center">{{ item.substituteVacation }}</td>
+              <td class="text-center">{{ item.summerVacation }}</td>
+              <td class="text-center">{{ item.specialHoliday }}</td>
+            </tr>
+          </tbody>
+        </v-simple-table>
+      </v-col>
+    </v-row>
+  </v-container>
 </template>
 
 <script>
@@ -131,7 +129,7 @@
 
 h2 {
   padding-top: 60px;
-  padding-bottom: 30px;
+  padding-bottom: 0px;
   text-align: center;
 }
 

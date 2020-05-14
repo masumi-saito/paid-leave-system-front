@@ -52,19 +52,19 @@
     </v-app-bar>
 
     <v-content>
-      <Admin/>
+      <SignUp/>
     </v-content>
   </v-app>
 </template>
 
 <script>
-import Admin from './components/Admin';
+import SignUp from './components/SignUp';
 
 export default {
   name: 'App',
 
   components: {
-    Admin
+    SignUp
   },
 
   data: () => ({

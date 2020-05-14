@@ -1,26 +1,24 @@
 <template>
-  <div id="app">
-    <section>
-      <div class="content">
-      <img src="../assets/logo.png" alt="logo">
-        <v-form class="login-form">
-          <v-text-field
-          v-model="email"
-          :rules="emailRules"
-          label="メールアドレス"
-          required
-          ></v-text-field>
-          <v-text-field
-          v-model="password"
-          :rules="passwordRules"
-          label="パスワード"
-          required
-          ></v-text-field>
-        </v-form>
-        <v-btn class="btn" @click="login()">ログイン</v-btn>
-      </div>
-    </section>
-  </div>
+  <section>
+    <div class="content">
+    <img src="../assets/logo.png" alt="logo">
+      <v-form class="login-form">
+        <v-text-field
+        v-model="email"
+        :rules="emailRules"
+        label="メールアドレス"
+        required
+        ></v-text-field>
+        <v-text-field
+        v-model="password"
+        :rules="passwordRules"
+        label="パスワード"
+        required
+        ></v-text-field>
+      </v-form>
+      <v-btn class="btn" @click="login()">ログイン</v-btn>
+    </div>
+  </section>
 </template>
 
 <style lang="scss">

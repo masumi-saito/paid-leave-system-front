@@ -1,8 +1,9 @@
 <template>
-    <v-app-bar
-    class= "ma-0 pa-0"
-    color="#212121"
-    >
+  <v-app-bar
+  class= "ma-0 pa-0"
+  color="#212121"
+  >
+    <v-layout align-center>
     <v-row>
       <v-col class="mx-auto">
         <span class="user-name">USER NAME</span>
@@ -10,40 +11,31 @@
       <v-spacer></v-spacer>
       <v-col>
         <router-link to="/summary">
-          <v-btn>
-            <span>サマリー</span>
-          </v-btn>
+          <v-btn>サマリー</v-btn>
         </router-link>
       </v-col>
       <v-col>
         <router-link to="/apply">
-          <v-btn>
-            <span>申請フォーム</span>
-          </v-btn>
+          <v-btn>申請フォーム</v-btn>
         </router-link>
       </v-col>
       <v-col>
         <router-link to="/permmision">
-          <v-btn>
-            <span>承認一覧</span>
-          </v-btn>
+          <v-btn>承認一覧</v-btn>
         </router-link>
       </v-col>
       <v-col>
         <router-link to="/admin">
-          <v-btn>
-            <span>管理者用</span>
-          </v-btn>
+          <v-btn>管理者用</v-btn>
         </router-link>
       </v-col>
       <v-spacer></v-spacer>
       <v-col>
-        <v-btn>
-          <span>ログアウト</span>
-        </v-btn>
+        <v-btn @click="logout()">ログアウト</v-btn>
       </v-col>
     </v-row>
-    </v-app-bar>
+    </v-layout>
+  </v-app-bar>
 </template>
 
 <script>
@@ -60,6 +52,10 @@ export default {
       ]
     }
   },
+  methods: {
+    logout() {
+    }
+  }
 }
 </script>
 

@@ -3,7 +3,6 @@
     <v-container
     fluid
     fill-height
-    
     >
       <v-row justify="center">
         <router-link to="/#">社員情報の編集/追加</router-link>

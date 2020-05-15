@@ -18,14 +18,14 @@
       <v-col>
         <router-link to="/apply">
           <v-btn>
-            <span>休暇/休日出勤申請</span>
+            <span>申請フォーム</span>
           </v-btn>
         </router-link>
       </v-col>
       <v-col>
         <router-link to="/permmision">
           <v-btn>
-            <span>休暇承認</span>
+            <span>承認一覧</span>
           </v-btn>
         </router-link>
       </v-col>
@@ -36,7 +36,6 @@
           </v-btn>
         </router-link>
       </v-col>
-
       <v-spacer></v-spacer>
       <v-col>
         <v-btn>
@@ -55,8 +54,8 @@ export default {
     return {
       menues:[
         {name: 'サマリー', link: '/summary'},
-        {name: '休暇/休日出勤申請', link: '/apply'},
-        {name: '休暇/休日出勤承認', link: '/permmision'},
+        {name: '申請フォーム', link: '/apply'},
+        {name: '承認一覧', link: '/permmision'},
         {name: '管理者用', link: '/admin'}
       ]
     }
@@ -64,7 +63,7 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .user-name {
   color: white;
 }

@@ -49,7 +49,18 @@
 
 <script>
 export default {
-  
+  name: 'GlobalHEader',
+
+  data() {
+    return {
+      menues:[
+        {name: 'サマリー', link: '/summary'},
+        {name: '休暇/休日出勤申請', link: '/apply'},
+        {name: '休暇/休日出勤承認', link: '/permmision'},
+        {name: '管理者用', link: '/admin'}
+      ]
+    }
+  },
 }
 </script>
 

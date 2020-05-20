@@ -1,17 +1,17 @@
 <template>
   <v-app>
-    <v-container>
+    <v-container class="permission">
       <v-row>
         <v-col>
-          <h2>申請依頼一覧</h2>
+          <h2>承認依頼一覧</h2>
           <v-simple-table>
             <thead>
               <tr>
-                <th class="text-center">申請者</th>
-                <th class="text-center">休暇種別</th>
-                <th class="text-center">取得予定日</th>
-                <th class="text-center">備考</th>
-                <th class="text-center">承認</th>
+                <th class="text-center white--text">申請者</th>
+                <th class="text-center white--text">休暇種別</th>
+                <th class="text-center white--text">取得予定日</th>
+                <th class="text-center white--text">備考</th>
+                <th class="text-center white--text">承認</th>
               </tr>
             </thead>
             <tbody>
@@ -37,30 +37,36 @@
   export default {
     data () {
       return {
-        permmisons: [
-          {
-            value: false,
-            name: '1',
-            type: '2',
-            startDate: '3',
-            endDate: '4',
-            remarks: '4'
-          }
-        ]
+        permmisons: [ ]
+      }
+    },
+
+    created() {
+      this.permmison()
+    },
+
+    methods: {
+      permmison() {
+        this.axios.get('http://127.0.0.1:3000/permmision')
+        .then((responce) => {
+          console.log(responce)
+          this.permmisons = responce.data
+        })
       }
     }
   }
 </script>
 
 <style lang="scss">
+.permission {
+  h2 {
+    padding-top: 60px;
+    padding-bottom: 30px;
+    text-align: center;
+  }
 
-h2 {
-  padding-top: 60px;
-  padding-bottom: 30px;
-  text-align: center;
-}
-
-.tableheader {
-  background-color: #616161;
+  thead {
+    background-color: #616161;
+  }
 }
 </style>

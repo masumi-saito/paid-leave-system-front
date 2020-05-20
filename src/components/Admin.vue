@@ -1,6 +1,7 @@
 <template>
   <v-app>
     <v-container
+    class="admin"
     fluid
     fill-height
     >

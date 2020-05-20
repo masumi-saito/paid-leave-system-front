@@ -1,6 +1,6 @@
 <template>
   <v-app>
-    <v-content>
+    <v-container class="login">
       <section>
         <div class="content">
         <img src="../assets/logo.png" alt="logo">
@@ -21,7 +21,7 @@
           <v-btn class="btn" @click="login()">ログイン</v-btn>
         </div>
       </section>
-    </v-content>
+    </v-container>
   </v-app>
 </template>
 

@@ -6,7 +6,9 @@
     <v-layout align-center>
     <v-row>
       <v-col class="mx-auto">
-        <span class="user-name">USER NAME</span>
+        <router-link to="/home">
+          <span class="user-name">USER NAME</span>
+        </router-link>
       </v-col>
       <v-spacer></v-spacer>
       <v-col>
@@ -59,7 +61,7 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 .user-name {
   color: white;
 }

@@ -1,8 +1,12 @@
 <template>
   <v-app>
-      <v-container class="apply">
+      <v-container class="apply"
+      fill-height
+      >
         <v-row>
-          <h2>申請フォーム</h2>
+          <v-col>
+            <h2>申請フォーム</h2>
+          </v-col>
         </v-row>
             <v-row>
               <v-col>
@@ -35,8 +39,8 @@
                 </v-date-picker>
                 </v-dialog>
               </v-col>
-              <v-col>
-                <span>〜</span>
+              <v-col class="term">
+                <div>〜</div>
               </v-col>
               <v-col>
                 <v-dialog
@@ -91,8 +95,13 @@
                 ></v-textarea>
               </v-col>
             </v-row>
-            <v-row>
-              <v-btn class="btn" @click="apply()">申請する</v-btn>
+            <v-row
+            :align="center"
+            :justify="center"
+            >
+              <v-col>
+                <v-btn class="btn" @click="apply()">申請する</v-btn>
+              </v-col>
             </v-row>
       </v-container>
   </v-app>
@@ -124,20 +133,20 @@ export default {
 </script>
 
 <style lang="scss">
-h2 {
-  padding-top: 100px;
-  padding-bottom: 20px;
-  text-align: center;
-}
 .v-date-picker-table.v-date-picker-table--date > table > tbody tr td:nth-child(7) .v-btn__content {
     color:blue
 }
 .v-date-picker-table.v-date-picker-table--date > table > tbody tr td:nth-child(1) .v-btn__content {
     color:red
 }
+
+.term {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .btn {
-  position: relative;
-  align-content: center;
   background-color: #E8008A;
 }
 </style>

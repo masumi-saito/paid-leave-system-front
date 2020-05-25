@@ -21,8 +21,8 @@
                 <td class="text-center">{{ item.startDate }} 〜 {{ item.endDate }}</td>
                 <td class="text-center">{{ item.remarks }}</td>
                 <td class="text-center">
-                  <v-btn class="btn">承認</v-btn>
-                  <v-btn class="btn">却下</v-btn>
+                  <v-btn class="btn" @click="approve">承認</v-btn>
+                  <v-btn class="btn" @click="reject">却下</v-btn>
                 </td>
               </tr>
             </tbody>
@@ -51,6 +51,16 @@
         .then((responce) => {
           console.log(responce)
           this.permmisons = responce.data
+        })
+      },
+      approve() {
+        this.axios.post('http://127.0.0.1:3000/permmision/approve',{
+          propriety:true
+        })
+      },
+      reject() {
+        this.axios.post('http://127.0.0.1:3000/permmision/reject',{
+          propriety:false
         })
       }
     }

@@ -69,6 +69,14 @@ export default {
 
 <style lang="scss">
 .home {
+    .v-data-table-header {
+    background-color: #616161;
+
+    span {
+    color: white;
+  }
+  }
+
   .v-data-footer {
     display: none;
   }

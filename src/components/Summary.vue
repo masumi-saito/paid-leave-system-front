@@ -89,14 +89,12 @@
     history() {
       this.axios.get('http://127.0.0.1:3000/history')
       .then((response) => {
-            console.log(response)
-            this.historyItems = response.data
+        this.historyItems = response.data
           })
     },
     remaining() {
       this.axios.get('http://127.0.0.1:3000/remaining')
       .then((responce) => {
-        console.log(responce)
         this.remainingItems = responce.data
       })
     }

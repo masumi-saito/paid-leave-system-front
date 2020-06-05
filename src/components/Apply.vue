@@ -3,106 +3,105 @@
       <v-container class="apply"
       fill-height
       >
-        <v-row>
+        <v-row align="center" justify="center">
+          <h2>申請フォーム</h2>
+        </v-row>
+        <v-row cols="4">
+          <v-col mt-1>
+            <h3>取得予定日(期間)</h3>
+          </v-col>
           <v-col>
-            <h2>申請フォーム</h2>
+            <v-dialog
+              ref="start_dialog"
+              v-model="start_modal"
+              :return-value.sync="start_date"
+              persistent
+              width="290px"
+            >
+            <template v-slot:activator="{ on }">
+              <v-text-field
+                v-model="start_date"
+                label="開始日"
+                readonly
+                v-on="on"
+              ></v-text-field>
+            </template>
+            <v-date-picker
+            v-model="start_date"
+            locale="ja-jp"
+            :day-format="date => new Date(date).getDate()"
+            scrollable>
+              <v-spacer></v-spacer>
+              <v-btn text color="primary" @click="start_modal = false">Cancel</v-btn>
+              <v-btn text color="primary" @click="$refs.start_dialog.save(start_date)">OK</v-btn>
+            </v-date-picker>
+            </v-dialog>
+          </v-col>
+
+          <v-col class="term">
+            <div>〜</div>
+          </v-col>
+
+          <v-col>
+            <v-dialog
+              ref="end_dialog"
+              v-model="end_modal"
+              :return-value.sync="end_date"
+              persistent
+              width="290px"
+            >
+            <template v-slot:activator="{ on }">
+              <v-text-field
+                v-model="end_date"
+                label="終了日"
+                readonly
+                v-on="on"
+              ></v-text-field>
+            </template>
+            <v-date-picker
+            v-model="end_date"
+            locale="ja-jp"
+            :day-format="date => new Date(date).getDate()"
+            scrollable >
+              <v-spacer></v-spacer>
+              <v-btn text color="primary" @click="end_modal = false">Cancel</v-btn>
+              <v-btn text color="primary" @click="$refs.end_dialog.save(end_date)">OK</v-btn>
+            </v-date-picker>
+            </v-dialog>
           </v-col>
         </v-row>
-            <v-row>
-              <v-col>
-                <h3>取得予定日(期間)</h3>
-              </v-col>
-              <v-col>
-                <v-dialog
-                  ref="start_dialog"
-                  v-model="start_modal"
-                  :return-value.sync="start_date"
-                  persistent
-                  width="290px"
-                >
-                <template v-slot:activator="{ on }">
-                  <v-text-field
-                    v-model="start_date"
-                    label="開始日"
-                    readonly
-                    v-on="on"
-                  ></v-text-field>
-                </template>
-                <v-date-picker
-                v-model="start_date"
-                locale="ja-jp"
-                :day-format="date => new Date(date).getDate()"
-                scrollable>
-                  <v-spacer></v-spacer>
-                  <v-btn text color="primary" @click="start_modal = false">Cancel</v-btn>
-                  <v-btn text color="primary" @click="$refs.start_dialog.save(start_date)">OK</v-btn>
-                </v-date-picker>
-                </v-dialog>
-              </v-col>
-              <v-col class="term">
-                <div>〜</div>
-              </v-col>
-              <v-col>
-                <v-dialog
-                  ref="end_dialog"
-                  v-model="end_modal"
-                  :return-value.sync="end_date"
-                  persistent
-                  width="290px"
-                >
-                <template v-slot:activator="{ on }">
-                  <v-text-field
-                    v-model="end_date"
-                    label="終了日"
-                    readonly
-                    v-on="on"
-                  ></v-text-field>
-                </template>
-                <v-date-picker
-                v-model="end_date"
-                locale="ja-jp"
-                :day-format="date => new Date(date).getDate()"
-                scrollable >
-                  <v-spacer></v-spacer>
-                  <v-btn text color="primary" @click="end_modal = false">Cancel</v-btn>
-                  <v-btn text color="primary" @click="$refs.end_dialog.save(end_date)">OK</v-btn>
-                </v-date-picker>
-                </v-dialog>
-              </v-col>
-            </v-row>
-            <v-row>
-              <v-col>
-                <h3>休暇種別</h3>
-              </v-col>
-              <v-col>
-                <v-select
-                :items="types"
-                v-model="selectedType"
-                outlined
-                ></v-select>
-              </v-col>
-            </v-row>
-            <v-row>
-              <v-col>
-                <h3>備考</h3>
-              </v-col>
-              <v-col>
-                <v-textarea
-                v-model="remarks"
-                auto-grow
-                label="備考"
-                outlined
-                ></v-textarea>
-              </v-col>
-            </v-row>
-            <v-row
-            :align="center"
-            :justify="center"
-            >
-              <v-col>
-                <v-btn class="btn" @click="apply()">申請する</v-btn>
-              </v-col>
-            </v-row>
+
+        <v-row cols="2">
+          <v-col>
+            <h3>休暇種別</h3>
+          </v-col>
+          <v-col>
+            <v-select
+            :items="types"
+            v-model="selectedType"
+            outlined
+            ></v-select>
+          </v-col>
+        </v-row>
+
+        <v-row cols="2">
+          <v-col>
+            <h3>備考</h3>
+          </v-col>
+          <v-col>
+            <v-textarea
+            v-model="remarks"
+            auto-grow
+            label="備考"
+            outlined
+            ></v-textarea>
+          </v-col>
+        </v-row>
+
+        <v-row align="center" justify="center">
+          <v-btn class="btn" @click="apply()">申請する</v-btn>
+        </v-row>
+
       </v-container>
   </v-app>
 </template>
@@ -144,9 +143,12 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
+  font-weight: bold;
 }
 
 .btn {
-  background-color: #E8008A;
+  color: #ffffff !important;
+  font-weight: bold !important;
+  background-color: #E8008A !important;
 }
 </style>

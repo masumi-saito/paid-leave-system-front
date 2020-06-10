@@ -17,8 +17,8 @@
             <tbody>
               <tr v-for="item in permmisons" :key="item.name">
                 <td class="text-center">{{ item.name }}</td>
-                <td class="text-center">{{ item.type }}</td>
-                <td class="text-center">{{ item.startDate }} 〜 {{ item.endDate }}</td>
+                <td class="text-center">{{ item.paid_type }}</td>
+                <td class="text-center">{{ item.start_date }} 〜 {{ item.end_date }}</td>
                 <td class="text-center">{{ item.remarks }}</td>
                 <td class="text-center">
                   <v-btn class="btn" @click="approve">承認</v-btn>

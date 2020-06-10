@@ -123,7 +123,7 @@ export default {
       this.axios.post('http://127.0.0.1:3000/apply',{
         start_date: this.start_date,
         end_date: this.end_date,
-        type: this.selectedType,
+        paid_type: this.selectedType,
         remarks: this.remarks
       })
     }

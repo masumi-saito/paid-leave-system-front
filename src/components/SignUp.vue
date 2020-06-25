@@ -12,15 +12,21 @@
           required
           ></v-text-field>
           <v-text-field
-          v-model="number"
-          :rules="numberRules"
-          label="社員番号"
+          v-model="hireDate"
+          :rules="hireDateRules"
+          label="入社日"
           required
           ></v-text-field>
           <v-text-field
           v-model="email"
           :rules="emailRules"
           label="メールアドレス"
+          required
+          ></v-text-field>
+          <v-text-field
+          v-model="slack"
+          :rules="slackRules"
+          label="Slackアカウント"
           required
           ></v-text-field>
           <v-text-field
@@ -36,12 +42,35 @@
           required
           ></v-text-field>
         </v-form>
-        <v-btn class="btn" @click="login()">アカウント作成</v-btn>
+        <v-btn class="btn" @click="signup">アカウント作成</v-btn>
         </div>
       </section>
     </v-container>
   </v-app>
 </template>
+
+<script>
+  export default {
+    data() {
+      return {
+        name: '',
+        hireDate: '',
+        email: '',
+        slack: '',
+        password: ''
+      }
+    },
+
+    methods: {
+      signup: function () {
+        this.axios.post('http://127.0.0.1:3000/users',{
+          user_name: this.name, hire_date: this.hireDate, email: this.email, slack: this.slack, password: this.password
+        })
+        .then(responce => console.log(responce))
+      }
+    }
+  }
+</script>
 
 <style lang="scss">
   section {
@@ -70,7 +99,7 @@
 
     .btn {
       position: relative;
-      margin-top: 120px;
+      margin-top: 200px;
     }
 
   }

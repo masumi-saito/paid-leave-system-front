@@ -1,8 +1,6 @@
 <template>
   <v-app>
-      <v-container class="apply"
-      fill-height
-      >
+      <v-container class="apply">
         <v-row align="center" justify="center">
           <h2>申請フォーム</h2>
         </v-row>
@@ -132,6 +130,14 @@ export default {
 </script>
 
 <style lang="scss">
+.apply {
+  width: 800px;
+  h3 {
+    width: 176px;
+    height: 28px;
+  }
+}
+
 .v-date-picker-table.v-date-picker-table--date > table > tbody tr td:nth-child(7) .v-btn__content {
     color:blue
 }

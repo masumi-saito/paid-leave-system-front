@@ -6,7 +6,7 @@
     fill-height
     >
       <v-row justify="center">
-        <router-link to="/#">社員情報の編集/追加</router-link>
+        <router-link to="/signup">新規社員登録</router-link>
       </v-row>
       <v-row justify="center">
         <router-link to="/#">特別休暇の付与</router-link>
